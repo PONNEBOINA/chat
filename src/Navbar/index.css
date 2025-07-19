@@ -1,0 +1,26 @@
+.nav-container{
+    background-color: lab(59.52% 55.47 -28.83);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100vw;
+    box-sizing: border-box;
+    height: 80px;
+}
+
+.logoutbtn:hover {
+    padding: 10px;
+    color: white;
+    background-color: red;
+     margin-right: 20px;
+
+}
+
+.logoutbtn {
+    padding: 10px;
+    color: black;
+    background-color:white;
+    margin-right: 20px;
+
+}

@@ -1,0 +1,115 @@
+/* Home/index.css */
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.home-container {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+
+.left-panel {
+  width: 250px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details {
+  margin-left: 10px;
+}
+
+.user-status.online {
+  color: green;
+  font-size: 0.9em;
+}
+
+.tab-buttons button {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab-buttons .active {
+  background-color: #007bff;
+  color: white;
+}
+
+.info-card {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.content-header {
+  margin-bottom: 10px;
+}
+
+.loading-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.unauthorized {
+  padding: 40px;
+  text-align: center;
+}
