@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6a0dad;
+  color: white;
+  padding: 15px 30px;
+
+  position: fixed;
+  top: 0;
+  left: 0;              
+  width: 100%;          
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+
+.navbar h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-section span {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.user-section button {
+  background-color: white;
+  color: #6a0dad;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.user-section button:hover {
+  background-color: #e0c3ff;
+}

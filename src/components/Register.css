@@ -1,0 +1,113 @@
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2cb67d, #7f5af0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.register-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.register-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Input fields */
+.register-container input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.register-container input:focus {
+  border-color: #2cb67d;
+  outline: none;
+}
+
+/* Button */
+.register-container button {
+  background-color: #2cb67d;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+  color: #249c63;
+}
+
+/* Error and Success Messages */
+.error {
+  color: #ff3b3b;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.success {
+  color: #2cb67d;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Switch to login */
+.register-container p {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.register-container p button {
+  background: none;
+  border: none;
+  color: #7f5af0;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.register-container p button:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 90%;
+  }
+
+  .register-container input,
+  .register-container button {
+    font-size: 0.95rem;
+  }
+}
