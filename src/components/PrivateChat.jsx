@@ -103,7 +103,7 @@ function PrivateChat({ currentUser }) {
   };
 
   return (
-    <div className="private-chat-container">
+    <div className="private-chat">
       <div className="user-list">
         <h3>Users</h3>
         <ul>

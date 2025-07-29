@@ -1,3 +1,4 @@
+// src/PublicChat.js
 import React, { useState, useEffect } from 'react';
 import socket from './socket';
 import ChatBox from './ChatBox';
@@ -15,7 +16,7 @@ function PublicChat({ currentUser }) {
       .catch((err) => console.error('Error fetching users:', err));
   }, []);
 
-  // Fetch existing public messages from DB
+  // Fetch previous public messages
   useEffect(() => {
     fetch('http://localhost:5000/api/chat/messages/public')
       .then((res) => res.json())
@@ -23,7 +24,7 @@ function PublicChat({ currentUser }) {
       .catch((err) => console.error('Error fetching messages:', err));
   }, []);
 
-  // Socket: register current user
+  // Register socket events
   useEffect(() => {
     socket.connect();
     socket.emit('register', currentUser._id);
@@ -49,12 +50,12 @@ function PublicChat({ currentUser }) {
         </ul>
       </div>
 
-       <div className="chat-area">
-      <ChatBox
-        messages={messages}
-        currentUser={currentUser}
-        onNewMessage={(msg) => setMessages((prev) => [...prev, msg])}
-      />
+      <div className="chat-area">
+        <ChatBox
+          messages={messages}
+          currentUser={currentUser}
+          onNewMessage={(msg) => setMessages((prev) => [...prev, msg])}
+        />
       </div>
     </div>
   );

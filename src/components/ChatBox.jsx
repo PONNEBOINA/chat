@@ -33,11 +33,10 @@ function ChatBox({ messages, currentUser, onNewMessage }) {
 
       const newMsg = await res.json();
 
-      // Emit to other clients via socket
+      // Emit to others and add to self immediately
       socket.emit('publicMessage', newMsg);
-
-      // Add to UI immediately
       onNewMessage?.(newMsg);
+
       input.value = '';
     } catch (err) {
       console.error('Error sending message:', err.message);
@@ -71,8 +70,15 @@ function ChatBox({ messages, currentUser, onNewMessage }) {
       </div>
 
       <form onSubmit={handleSend} className="chat-input-form">
-        <input name="message" placeholder="Type a message..." required disabled={loading} />
-        <button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Send'}</button>
+        <input
+          name="message"
+          placeholder="Type a message..."
+          required
+          disabled={loading}
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? 'Sending...' : 'Send'}
+        </button>
       </form>
     </div>
   );
