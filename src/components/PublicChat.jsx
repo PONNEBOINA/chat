@@ -1,4 +1,3 @@
-// src/PublicChat.js
 import React, { useState, useEffect } from 'react';
 import socket from './socket';
 import ChatBox from './ChatBox';
@@ -39,6 +38,17 @@ function PublicChat({ currentUser }) {
     };
   }, [currentUser._id]);
 
+  const handleNewMessage = (messageData) => {
+    fetch('http://localhost:5000/api/chat/messages/public', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        content: messageData.content,
+        senderId: currentUser._id
+      })
+    });
+  };
+
   return (
     <div className="private-chat-container">
       <div className="user-list">
@@ -54,7 +64,7 @@ function PublicChat({ currentUser }) {
         <ChatBox
           messages={messages}
           currentUser={currentUser}
-          onNewMessage={(msg) => setMessages((prev) => [...prev, msg])}
+          onNewMessage={handleNewMessage}
         />
       </div>
     </div>
